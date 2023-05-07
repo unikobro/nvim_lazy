@@ -63,13 +63,29 @@ return {
 				},
 			})
 		end
+	},
+	{
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({})
+		end,
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("todo-comments").setup({})
+		end
+	},
+	{
+		"simrat39/symbols-outline.nvim",
+		config = function ()
+			require("symbols-outline").setup()
+		end,
+		keys = {
+			{ "<leader>st", ":SymbolsOutline<cr>", desc = "symbol tree" }
+		}
 	}
-	, {
-	"folke/which-key.nvim",
-	config = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 300
-		require("which-key").setup({})
-	end,
-}
 }

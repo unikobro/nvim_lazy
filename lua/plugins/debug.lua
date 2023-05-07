@@ -1,4 +1,4 @@
-function dap_config()
+local function dap_config()
 	local dap = require("dap")
 	local home_path = vim.fn.getenv("HOME")
 
@@ -6,7 +6,7 @@ function dap_config()
 		type = "server",
 		port = "${port}",
 		executable = {
-			-- CHANGE THIS to your path!
+			-- WARN: CHANGE THIS to your path!
 			command = home_path .. "/.local/share/nvim/codelldb/extension/adapter/codelldb",
 			args = { "--port", "${port}" },
 
@@ -31,7 +31,7 @@ function dap_config()
 
 end
 
-function dap_ui_config()
+local function dap_ui_config()
 	local dapui = require("dapui")
 	local dap = require("dap")
 	local api = vim.api

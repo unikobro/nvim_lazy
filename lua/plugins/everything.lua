@@ -1,13 +1,6 @@
 return {
 	--{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	{
-		"folke/neodev.nvim",
-		config = function()
-			require("neodev").setup()
-		end,
-		priority = 51
-	},
-	{
 		"sainnhe/sonokai",
 		config = function()
 			vim.g.sonokai_style = "espresso"

@@ -47,7 +47,10 @@ end
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { { "kyazdani42/nvim-web-devicons" } },
+		dependencies = {
+			"kyazdani42/nvim-web-devicons",
+			"sainnhe/sonokai",
+		},
 		config = lualine_config
 	},
 	{

@@ -24,3 +24,8 @@ vim.keymap.set({ "n", "x" }, "<leader>bp", ":bprevious<enter>")
 
 vim.keymap.set("t", "<C-W>", "<C-\\><C-n>")
 
+vim.keymap.set("n", "<leader>tc", ":tabnew<cr>", { desc = "tab create" } )
+vim.keymap.set("n", "<leader>tn", ":tabnext<cr>", { desc = "tab next" } )
+vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>", { desc = "tab previous" } )
+vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "tab close" } )
+

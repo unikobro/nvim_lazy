@@ -17,6 +17,11 @@ return { {
 				layout_config = {
 					prompt_position = "top",
 				},
+				file_ignore_patterns = {
+					"node_modules",
+					"*.o",
+					"*.out"
+				}
 			},
 			extensions = {
 				["ui-select"] = {
@@ -36,6 +41,13 @@ return { {
 				require("telescope.builtin").find_files()
 			end,
 			desc = "[f]ind [f]iles"
+		},
+		{
+			"<leader>fF",
+			function()
+				require("telescope.builtin").find_files({ hidden = true })
+			end,
+			desc = "[f]ind hidden files"
 		},
 		{
 			"<leader>fr",

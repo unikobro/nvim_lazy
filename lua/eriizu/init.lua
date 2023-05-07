@@ -1,4 +1,3 @@
-print("heey eriizu")
 require("eriizu.opt")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

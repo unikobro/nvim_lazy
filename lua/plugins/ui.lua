@@ -81,11 +81,18 @@ return {
 	},
 	{
 		"simrat39/symbols-outline.nvim",
-		config = function ()
+		config = function()
 			require("symbols-outline").setup()
 		end,
 		keys = {
 			{ "<leader>st", ":SymbolsOutline<cr>", desc = "symbol tree" }
 		}
+	},
+	{
+		'goolord/alpha-nvim',
+		requires = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require 'alpha'.setup(require 'alpha.themes.startify'.config)
+		end
 	}
 }

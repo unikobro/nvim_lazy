@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 vim.opt.colorcolumn = "80"
 
-vim.keymap.set("n", "<leader>fd", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>fd", vim.cmd.Ex, { desc = "explore directories" } )
 vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
 vim.keymap.set({ "n", "x" }, "<leader>bn", ":bNext<enter>")

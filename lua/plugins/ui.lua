@@ -90,9 +90,13 @@ return {
 	},
 	{
 		'goolord/alpha-nvim',
+		lazy = false,
 		requires = { 'nvim-tree/nvim-web-devicons' },
 		config = function()
 			require 'alpha'.setup(require 'alpha.themes.startify'.config)
-		end
+		end,
+		keys = {
+			{ "<leader>a", ":Alpha<cr>", desc = "dashboard" }
+		}
 	}
 }

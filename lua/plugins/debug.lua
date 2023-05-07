@@ -107,9 +107,6 @@ return {
 				end, desc = "[d]ebug [r]un last"
 			},
 		},
-		dependencies = {
-			"mfussenegger/nvim-dap"
-		}
 	},
 	{
 		"rcarriga/nvim-dap-ui",

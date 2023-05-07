@@ -1,4 +1,4 @@
-function rst_config()
+local function rst_config()
 	local lsp = require("lsp-zero")
 	local rust_lsp = lsp.build_options("rust_analyzer", {})
 	local extension_path = vim.env.HOME .. "/.local/share/nvim/codelldb/extension/"

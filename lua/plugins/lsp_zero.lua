@@ -32,7 +32,6 @@ return { {
 		{ 'williamboman/mason-lspconfig.nvim' },
 		{ 'hrsh7th/nvim-cmp' },
 		{ 'hrsh7th/cmp-nvim-lsp' },
-		{ 'L3MON4D3/LuaSnip', enabled = false },
 		{ "j-hui/fidget.nvim" },
 		{
 			"folke/neodev.nvim",
@@ -50,4 +49,12 @@ return { {
 			desc = "refactor lsp format"
 		}
 	}
-} }
+},
+{
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	version = "1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!).
+	build = "make install_jsregexp"
+}
+}

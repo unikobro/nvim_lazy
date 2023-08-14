@@ -109,7 +109,8 @@ return {
 					vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
 					vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
 				end,
-				backends = { "lsp", "treesitter", "markdown", "man" },
+				backends = { "treesitter", "lsp", "markdown", "man" },
+				-- backends = { "lsp", "treesitter", "markdown", "man" },
 				attach_mode = "global",
 				layout = {
 					width = 50,
@@ -152,14 +153,13 @@ return {
 		config = function()
 			local startify = require("alpha.themes.startify")
 			startify.section.header.val = {
-[[                                    (_)                                      ]],
-[[ _ __ ___   ___  _____      ____   ___ _ __ ___       |\      _,,,---,,_     ]],
-[[| '_ ` _ \ / _ \/ _ \ \ /\ / /\ \ / / | '_ ` _ \  Z zz /,`.-'`'    -.  ;-;;,_]],
-[[| | | | | |  __/ (_) \ V  V /  \ V /| | | | | | |    |,4-  ) )-,_. ,\ (  `'-']],
-[[|_| |_| |_|\___|\___/ \_/\_/    \_/ |_|_| |_| |_|   '---''(_/--'  `-'\_)     ]],
+				[[                                    (_)                                      ]],
+				[[ _ __ ___   ___  _____      ____   ___ _ __ ___       |\      _,,,---,,_     ]],
+				[[| '_ ` _ \ / _ \/ _ \ \ /\ / /\ \ / / | '_ ` _ \  Z zz /,`.-'`'    -.  ;-;;,_]],
+				[[| | | | | |  __/ (_) \ V  V /  \ V /| | | | | | |    |,4-  ) )-,_. ,\ (  `'-']],
+				[[|_| |_| |_|\___|\___/ \_/\_/    \_/ |_|_| |_| |_|   '---''(_/--'  `-'\_)     ]],
 			}
 			require("alpha").setup(startify.config)
-
 		end,
 		keys = {
 			{ "<leader>a", ":Alpha<cr>", desc = "dashboard" },

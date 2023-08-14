@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>tn", ":tabnext<cr>", { desc = "tab next" } )
 vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>", { desc = "tab previous" } )
 vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "tab close" } )
 
+vim.keymap.set("n", "<M-right>", ":tabnext<cr>", { desc = "tab next" } )
+vim.keymap.set("n", "<M-left>", ":tabprevious<cr>", { desc = "tab previous" } )
+

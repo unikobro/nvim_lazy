@@ -21,11 +21,6 @@ end
 return {
 
 	{
-		"j-hui/fidget.nvim",
-		tag = "legacy",
-		event = "LspAttach",
-	},
-	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
 		config = config,

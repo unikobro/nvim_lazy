@@ -71,17 +71,18 @@ return {
 		"folke/which-key.nvim",
 		config = function()
 			vim.o.timeout = true
-			vim.o.timeoutlen = 300
+			vim.o.timeoutlen = 2000
 			require("which-key").setup({})
 		end,
 	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("todo-comments").setup({})
-		end,
-	},
+--	{
+--		"folke/todo-comments.nvim",
+--		dependencies = { "nvim-lua/plenary.nvim" },
+--		config = function()
+--			require("todo-comments").setup({})
+--		end,
+--		enable = false
+--	},
 	{
 		"simrat39/symbols-outline.nvim",
 		enable = false,

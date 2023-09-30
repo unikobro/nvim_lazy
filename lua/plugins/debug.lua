@@ -1,20 +1,26 @@
 local function dap_config()
-	local dap = require("dap")
+	local dap, dapui = require("dap"), require("dapui")
 	local home_path = vim.fn.getenv("HOME")
 
+	dap.listeners.after.event_initialized["dapui_config"] = function()
+		dapui.open()
+	end
+
+	-- NOTE: from: https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)
+	-- downloaded codelldb vsix from https://github.com/vadimcn/codelldb/releases and extracted in
+	-- .local/share/nvim
 	dap.adapters.codelldb = {
 		type = "server",
 		port = "${port}",
 		executable = {
 			-- WARN: CHANGE THIS to your path!
-			command = home_path .. "/.local/share/nvim/codelldb/extension/adapter/codelldb",
+			command = home_path .. "/.local/share/nvim/codelldb-1.10.0/extension/adapter/codelldb",
 			args = { "--port", "${port}" },
 
-			-- On windows you may have to uncomment this:
+			-- FIX: On windows you may have to uncomment this:
 			-- detached = false,
 		},
 	}
-
 	dap.configurations.cpp = {
 		{
 			name = "Launch file",
@@ -52,12 +58,13 @@ local function dap_ui_config()
 	end
 
 	dap.listeners.after["event_terminated"]["me"] = function()
-		dapui.close()
+		-- dapui.close()
 		for _, keymap in pairs(keymap_restore) do
 			api.nvim_buf_set_keymap(keymap.buffer, keymap.mode, keymap.lhs, keymap.rhs, { silent = keymap.silent == 1 })
 		end
 		keymap_restore = {}
 	end
+	dapui.setup()
 end
 
 return {
@@ -113,6 +120,11 @@ return {
 		config = dap_ui_config,
 		lazy = true,
 		keys = {
+			{
+				"<leader>du", function()
+					require("dapui").toggle()
+				end, desc = "debug dapui toogle"
+			},
 			{
 				"<leader>dh", function()
 					require("dap.ui.widgets").hover()

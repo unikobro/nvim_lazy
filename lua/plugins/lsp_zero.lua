@@ -18,43 +18,49 @@ local function config()
 	lsp.setup()
 end
 
-return { {
-	'VonHeikemen/lsp-zero.nvim',
-	branch = 'v2.x',
-	config = config,
-	lazy = false,
-	dependencies = {
-		{ 'neovim/nvim-lspconfig' },
-		{
-			'williamboman/mason.nvim',
-			build = "MasonUpdate<cr>"
+return {
+
+	{
+		"j-hui/fidget.nvim",
+		tag = "legacy",
+		event = "LspAttach",
+	},
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v2.x",
+		config = config,
+		lazy = false,
+		dependencies = {
+			{ "neovim/nvim-lspconfig" },
+			{
+				"williamboman/mason.nvim",
+				build = "MasonUpdate<cr>",
+			},
+			{ "williamboman/mason-lspconfig.nvim" },
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{
+				"folke/neodev.nvim",
+				config = function()
+					require("neodev").setup()
+				end,
+			},
 		},
-		{ 'williamboman/mason-lspconfig.nvim' },
-		{ 'hrsh7th/nvim-cmp' },
-		{ 'hrsh7th/cmp-nvim-lsp' },
-		{ "j-hui/fidget.nvim" },
-		{
-			"folke/neodev.nvim",
-			config = function()
-				require("neodev").setup()
-			end,
+		keys = {
+			{
+				"<leader>rf",
+				function()
+					vim.lsp.buf.format()
+				end,
+				desc = "refactor lsp format",
+			},
 		},
 	},
-	keys = {
-		{
-			"<leader>rf",
-			function()
-				vim.lsp.buf.format()
-			end,
-			desc = "refactor lsp format"
-		}
-	}
-},
-{
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-	build = "make install_jsregexp"
-}
+	{
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		version = "1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
+	},
 }

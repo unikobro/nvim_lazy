@@ -2,6 +2,7 @@ return {
 	--{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	{
 		"sainnhe/sonokai",
+		lazy = false,
 		config = function()
 			vim.g.sonokai_style = "espresso"
 			vim.g.sonokai_transparent_background = 2

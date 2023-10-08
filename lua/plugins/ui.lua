@@ -1,3 +1,13 @@
+local function is_width_more_than(target_width)
+	return function()
+		local win_width = vim.fn.winwidth(0)
+		if win_width > target_width then
+			return true
+		end
+		return false
+	end
+end
+
 local function lualine_config()
 	local theme = require("lualine.themes.sonokai")
 
@@ -9,11 +19,13 @@ local function lualine_config()
 			component_separators = { left = " ", right = " " },
 			section_separators = { left = " ", right = " " },
 			disabled_filetypes = {
-				statusline = {},
-				winbar = {},
+				statusline = { "alpha" },
+				winbar = { "alpha" },
 			},
-			ignore_focus = {},
-			always_divide_middle = true,
+			ignore_focus = {
+				--"aerial"
+			},
+			always_divide_middle = false,
 			globalstatus = false,
 			refresh = {
 				statusline = 1000,
@@ -23,30 +35,114 @@ local function lualine_config()
 		},
 		sections = {
 			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff", "diagnostics" },
-			lualine_c = { { "filename", file_status = true, path = 1 } },
-			lualine_x = { "aerial", "progress" },
-			lualine_y = { "filetype" },
-			lualine_z = { "location" },
+			lualine_b = {
+				{
+					"branch",
+					cond = is_width_more_than(120)
+				},
+				{
+					"diff",
+					cond = is_width_more_than(110)
+				}
+			},
+			lualine_c = {
+				{
+					"filename",
+					file_status = true,
+					path = 1
+				},
+				{
+					"diagnostics",
+					symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' }
+				}
+			},
+			lualine_x = {
+				{
+					"aerial",
+					cond = is_width_more_than(90)
+
+				}
+			},
+			lualine_y = {
+				{
+					"progress",
+				}
+			},
+			lualine_z = {
+				{
+					"location",
+				}
+			},
 		},
 		inactive_sections = {
 			lualine_a = {},
 			lualine_b = {},
-			lualine_c = { "filename" },
-			lualine_x = { "location" },
+			lualine_c = {
+				{ "filename", file_status = true, path = 1 },
+				{
+					"diagnostics",
+					symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' }
+				}
+			},
+			lualine_x = { "aerial", "progress", "location" },
 			lualine_y = {},
 			lualine_z = {},
 		},
-		tabline = {},
-		winbar = {},
-		inactive_winbar = {},
-		extensions = {},
+		tabline = {
+			lualine_a = { {
+				"tabs",
+				mode = 2,
+				cond = function()
+					return vim.fn.tabpagenr('$') > 1
+				end,
+				draw_empty = false
+			} },
+		},
+		disabled_winbar = {
+			lualine_b = {
+				{
+					"filename",
+					path = 1,
+					symbols = { unnamed = "" },
+					cond = function()
+						if vim.fn.expand('%') == "" then
+							return false
+						else
+							return true
+						end
+					end
+				}
+			},
+			lualine_c = { "aerial" },
+			lualine_x = { "location" }
+		},
+		disabled_inactive_winbar = {
+			lualine_c = {
+				{
+					"filename",
+					path = 1,
+					symbols = { unnamed = "" },
+					cond = function()
+						if vim.fn.expand('%') == "" then
+							return false
+						else
+							return true
+						end
+					end
+				},
+				"aerial"
+			},
+			lualine_x = { "location" }
+		},
+		extensions = { 'aerial', 'lazy', 'nvim-dap-ui' },
 	})
+	vim.cmd("set showtabline=1")
 end
 
 return {
 	{
 		"nvim-lualine/lualine.nvim",
+		lazy = false,
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
 			"sainnhe/sonokai",
@@ -76,14 +172,14 @@ return {
 			require("which-key").setup({})
 		end,
 	},
---	{
---		"folke/todo-comments.nvim",
---		dependencies = { "nvim-lua/plenary.nvim" },
---		config = function()
---			require("todo-comments").setup({})
---		end,
---		enable = false
---	},
+	--	{
+	--		"folke/todo-comments.nvim",
+	--		dependencies = { "nvim-lua/plenary.nvim" },
+	--		config = function()
+	--			require("todo-comments").setup({})
+	--		end,
+	--		enable = false
+	--	},
 	{
 		"simrat39/symbols-outline.nvim",
 		enable = false,

@@ -1,39 +1,45 @@
+-- INFO: fuzzy finder
+-- tags: UI, functional
+local function config_telescope()
+	local actions = require("telescope.actions")
+	require("telescope").setup({
+		defaults = {
+			mappings = {
+				i = {
+					["<esc>"] = actions.close,
+				},
+			},
+			sorting_strategy = "ascending",
+			layout_strategy = "horizontal",
+			layout_config = {
+				prompt_position = "top",
+			},
+			file_ignore_patterns = {
+				"node_modules",
+				"*.o",
+				"*.out",
+				"#*#",
+				"*~"
+			}
+		},
+		extensions = {
+			["ui-select"] = {
+				require("telescope.themes").get_dropdown {
+					-- even more opts
+				}
+
+			}
+		}
+	})
+	require("telescope").load_extension("ui-select")
+end
+
 return { {
 	"nvim-telescope/telescope.nvim",
 	lazy = false,
 	tag = "0.1.1",
 	dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-ui-select.nvim" },
-	config = function()
-		local actions = require("telescope.actions")
-		require("telescope").setup({
-			defaults = {
-				mappings = {
-					i = {
-						["<esc>"] = actions.close,
-					},
-				},
-				sorting_strategy = "ascending",
-				layout_strategy = "horizontal",
-				layout_config = {
-					prompt_position = "top",
-				},
-				file_ignore_patterns = {
-					"node_modules",
-					"*.o",
-					"*.out"
-				}
-			},
-			extensions = {
-				["ui-select"] = {
-					require("telescope.themes").get_dropdown {
-						-- even more opts
-					}
-
-				}
-			}
-		})
-		require("telescope").load_extension("ui-select")
-	end,
+	config = config_telescope,
 	keys = {
 		{
 			"<leader>ff",

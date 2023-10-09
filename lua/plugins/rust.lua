@@ -1,3 +1,5 @@
+-- INFO: rust tools for LSP, refactoring and debug
+-- tags: lang, debug
 local function rst_config()
 	local lsp = require("lsp-zero")
 	local rust_lsp = lsp.build_options("rust_analyzer", {})
@@ -9,7 +11,7 @@ local function rst_config()
 		server = rust_lsp,
 		tools = {
 			inlay_hints = {
-				-- max_len_align = true,
+				max_len_align = true,
 				parameter_hints_prefix = " <- ",
 				other_hints_prefix = " => ",
 			},

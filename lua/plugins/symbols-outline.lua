@@ -7,8 +7,8 @@ return {
 		config = function()
 			require("symbols-outline").setup()
 		end,
-		keys = {
-			{ "<leader>st", ":SymbolsOutline<cr>", desc = "symbol tree" }
-		}
+		--keys = {
+			--{ "<leader>st", ":SymbolsOutline<cr>", desc = "symbol tree" }
+		--}
 	}
 }

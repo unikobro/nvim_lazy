@@ -109,7 +109,7 @@ return {
 		"nvim-lualine/lualine.nvim",
 		lazy = false,
 		dependencies = {
-			"kyazdani42/nvim-web-devicons",
+			"nvim-tree/nvim-web-devicons",
 			"sainnhe/sonokai",
 		},
 		config = lualine_config,

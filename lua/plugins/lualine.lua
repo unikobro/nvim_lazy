@@ -22,8 +22,8 @@ local function lualine_config()
 			component_separators = { left = " ", right = " " },
 			section_separators = { left = " ", right = " " },
 			disabled_filetypes = {
-				statusline = { "alpha" },
-				winbar = { "alpha" },
+				statusline = { "alpha", "aerial" },
+				winbar = { "alpha", "aerial" },
 			},
 			ignore_focus = {},
 			always_divide_middle = false,
@@ -96,7 +96,8 @@ local function lualine_config()
 				cond = function()
 					return vim.fn.tabpagenr('$') > 1
 				end,
-				draw_empty = false
+				draw_empty = false,
+				max_length = function() return vim.go.columns end,
 			} },
 		},
 		extensions = { 'aerial', 'lazy', 'nvim-dap-ui' },

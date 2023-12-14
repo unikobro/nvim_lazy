@@ -11,9 +11,11 @@ local function rst_config()
 		server = rust_lsp,
 		tools = {
 			inlay_hints = {
-				max_len_align = true,
-				parameter_hints_prefix = " <- ",
-				other_hints_prefix = " => ",
+				-- max_len_align = true,
+				only_current_line = true,
+				parameter_hints_prefix = "",
+				other_hints_prefix = " -> ",
+				highlight = "WarningMsg"
 			},
 		},
 		dap = {

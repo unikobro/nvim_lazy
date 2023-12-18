@@ -10,8 +10,8 @@ local function config_aerial()
 			vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
 			vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
 		end,
-		-- backends = { "treesitter", "lsp", "markdown", "man" },
-		backends = { "lsp", "treesitter", "markdown", "man" },
+		backends = { "treesitter", "lsp", "markdown", "man" },
+		-- backends = { "lsp", "treesitter", "markdown", "man" },
 		attach_mode = "global",
 		layout = {
 			width = 50,

@@ -15,7 +15,9 @@ local function lualine_config()
 	local theme = require("lualine.themes.gruvbox-material")
 	-- local theme = require("lualine.themes.gruvbox-material")
 
-	theme.normal.a.bg = "#9fa0e1"
+	-- theme.normal.a.bg = "#9fa0e1"
+	theme.normal.a.bg = "#d3869b"
+	theme.command.a.bg = "#d8a657"
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,

@@ -12,8 +12,8 @@ local function is_width_more_than(target_width)
 end
 
 local function lualine_config()
+	-- local theme = require("lualine.themes.sonokai")
 	local theme = require("lualine.themes.gruvbox-material")
-	-- local theme = require("lualine.themes.gruvbox-material")
 
 	-- theme.normal.a.bg = "#9fa0e1"
 	theme.normal.a.bg = "#d3869b"

@@ -18,5 +18,6 @@ else
 		vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 		vim.cmd("au VimLeave * set guicursor=a:hor10-blinkon0")
 	end
+	vim.opt.showtabline = 1
 	-- ordinary Neovim
 end

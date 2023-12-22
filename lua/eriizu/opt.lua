@@ -41,3 +41,5 @@ vim.keymap.set("n", "<M-left>", ":tabprevious<cr>", { desc = "tab previous", sil
 vim.keymap.set("i", "jj", "<Esc>", { silent = true });
 vim.keymap.set("i", "qq", "<C-c>", { silent = false });
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true });
+
+vim.keymap.set("n", "<leader>fR", ":Lazy reload telescope.nvim<cr>", { desc = "Sometimes telescope can't init, reload usually does the trick", silent = true});

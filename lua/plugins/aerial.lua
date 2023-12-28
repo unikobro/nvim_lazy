@@ -15,6 +15,8 @@ local function config_aerial()
 		attach_mode = "global",
 		layout = {
 			width = 50,
+			default_direction = "prefer_left",
+			placement = "edge",
 		},
 		show_guides = true,
 		nerd_font = "auto",

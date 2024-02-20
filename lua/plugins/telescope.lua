@@ -36,6 +36,20 @@ return {
 		config = config_telescope,
 		keys = {
 			{
+				"<leader>flw",
+				function()
+					require("telescope.builtin").lsp_document_symbols()
+				end,
+				desc = "[f]ind [f]iles"
+			},
+			{
+				"<leader>fld",
+				function()
+					require("telescope.builtin").lsp_document_symbols()
+				end,
+				desc = "[f]ind [f]iles"
+			},
+			{
 				"<leader>ff",
 				function()
 					require("telescope.builtin").find_files()

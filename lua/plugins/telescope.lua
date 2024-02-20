@@ -40,14 +40,14 @@ return {
 				function()
 					require("telescope.builtin").lsp_document_symbols()
 				end,
-				desc = "[f]ind [f]iles"
+				desc = "find document symbols"
 			},
 			{
 				"<leader>fld",
 				function()
 					require("telescope.builtin").lsp_document_symbols()
 				end,
-				desc = "[f]ind [f]iles"
+				desc = "find document symbols"
 			},
 			{
 				"<leader>ff",

@@ -27,12 +27,14 @@ vim.keymap.set({ "n", "x" }, "<leader>bp", ":bprevious<enter>")
 vim.keymap.set("t", "<C-W>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>tc", ":tabnew<cr>", { desc = "tab create", silent = true })
-vim.keymap.set("n", "<leader>tn", ":tabnext<cr>", { desc = "tab next", silent = true })
-vim.keymap.set("n", "<leader>tp", ":tabprevious<cr>", { desc = "tab previous", silent = true })
+vim.keymap.set("n", "<leader>tk", ":tabnext<cr>", { desc = "tab next", silent = true })
+vim.keymap.set("n", "<leader>tk", ":tabprevious<cr>", { desc = "tab previous", silent = true })
 vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "tab close", silent = true })
 
 vim.keymap.set("n", "<M-right>", ":tabnext<cr>", { desc = "tab next", silent = true })
 vim.keymap.set("n", "<M-left>", ":tabprevious<cr>", { desc = "tab previous", silent = true })
+vim.keymap.set("n", "<M-k>", ":tabnext<cr>", { desc = "tab next", silent = true })
+vim.keymap.set("n", "<M-j>", ":tabprevious<cr>", { desc = "tab previous", silent = true })
 
 -- INFO: I want C-c to execute autocmd InsertLeave, as I'm addicted to C-c on everything
 -- and would love highlighters to still be able to do their job.

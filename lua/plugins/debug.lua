@@ -119,6 +119,7 @@ return {
 		"rcarriga/nvim-dap-ui",
 		config = dap_ui_config,
 		lazy = true,
+		dependencies = { "nvim-neotest/nvim-nio" },
 		keys = {
 			{
 				"<leader>du", function()

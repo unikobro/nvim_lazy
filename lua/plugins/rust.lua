@@ -15,7 +15,7 @@ local function rst_config()
 				only_current_line = true,
 				parameter_hints_prefix = "",
 				other_hints_prefix = " -> ",
-				highlight = "WarningMsg"
+				highlight = "Comment"
 			},
 		},
 		dap = {

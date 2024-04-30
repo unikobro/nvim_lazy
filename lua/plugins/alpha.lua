@@ -18,6 +18,7 @@ return {
 		config = function()
 			local startify = require("alpha.themes.startify")
 			startify.section.header.val = header
+			startify.section.header.opts.hl = "Purple"
 			require("alpha").setup(startify.config)
 		end,
 		keys = {

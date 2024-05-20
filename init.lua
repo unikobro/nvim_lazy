@@ -6,7 +6,7 @@ else
 	require("eriizu")
 
 	if vim.g.neovide then
-		vim.o.guifont = "Fira Mono:h10"
+		vim.o.guifont = "iosevkatermslab nerd font:h10"
 		vim.g.neovide_padding_top = 5
 		vim.g.neovide_padding_bottom = 5
 		vim.g.neovide_padding_right = 5

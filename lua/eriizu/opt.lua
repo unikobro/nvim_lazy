@@ -1,4 +1,7 @@
 vim.opt.number = true
+vim.opt.scrolloff = 5
+vim.opt.title = true
+vim.opt.breakindent = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
@@ -7,8 +10,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = "tab:→ ,nbsp:+,trail:·,extends:→,precedes:←"
-vim.opt.wildignore =
-".git,.hg,.svn,*.pyc,*.o,*.jpg,*.jpeg,*.png,*.gif,*.zip,*.DS_Store,**/node_modules/**,**/bower_modules/**"
+vim.opt.wildignore:append( ".git,.hg,.svn,*.pyc,*.o,*.jpg,*.jpeg,*.png,*.gif,*.zip,*.DS_Store,*/node_modules/*,*/bower_modules/*")
 vim.opt.showmode = false
 vim.g.mapleader = " "
 

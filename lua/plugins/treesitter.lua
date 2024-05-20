@@ -14,7 +14,7 @@ local function config_ts()
 		auto_install = true,
 
 		ignore_install = { "sql" },
-		indent = { enable = true },
+		indent = { enable = false },
 		highlight = {
 			enable = true,
 

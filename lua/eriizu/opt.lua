@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>tc", ":tabnew<cr>", { desc = "tab create", silent =
 vim.keymap.set("n", "<leader>tk", ":tabnext<cr>", { desc = "tab next", silent = true })
 vim.keymap.set("n", "<leader>tk", ":tabprevious<cr>", { desc = "tab previous", silent = true })
 vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "tab close", silent = true })
+vim.keymap.set("n", "<leader>tt", ":set showtabline=1<cr>", { desc = "tab close", silent = true })
 
 vim.keymap.set("n", "<M-right>", ":tabnext<cr>", { desc = "tab next", silent = true })
 vim.keymap.set("n", "<M-left>", ":tabprevious<cr>", { desc = "tab previous", silent = true })

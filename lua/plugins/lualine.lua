@@ -114,7 +114,7 @@ return {
 		lazy = false,
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
-			"sainnhe/sonokai",
+			-- "sainnhe/sonokai",
 		},
 		config = lualine_config,
 	},

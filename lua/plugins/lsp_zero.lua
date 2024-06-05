@@ -32,7 +32,7 @@ return {
 				build = "MasonUpdate<cr>",
 			},
 			{ "williamboman/mason-lspconfig.nvim" },
-			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/nvim-cmp", commit = "b356f2c" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{
 				"folke/neodev.nvim",

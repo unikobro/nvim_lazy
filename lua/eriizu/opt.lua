@@ -48,3 +48,4 @@ vim.keymap.set("i", "qq", "<C-c>", { silent = false });
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true });
 
 vim.keymap.set("n", "<leader>fR", ":Lazy reload telescope.nvim<cr>", { desc = "Sometimes telescope can't init, reload usually does the trick", silent = true});
+vim.keymap.set("n", "<leader>tt", ":set showtabline=1<cr>", { desc = "Sometimes telescope can't init, reload usually does the trick", silent = true});

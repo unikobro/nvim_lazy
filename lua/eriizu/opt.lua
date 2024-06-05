@@ -9,6 +9,7 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
+vim.cmd([[:set showtabline=1]])
 vim.opt.listchars = "tab:→ ,nbsp:+,trail:·,extends:→,precedes:←"
 vim.opt.wildignore:append( ".git,.hg,.svn,*.pyc,*.o,*.jpg,*.jpeg,*.png,*.gif,*.zip,*.DS_Store,*/node_modules/*,*/bower_modules/*")
 vim.opt.showmode = false

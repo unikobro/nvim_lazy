@@ -24,8 +24,6 @@ vim.opt.colorcolumn = "80"
 vim.keymap.set("n", "<leader>fd", vim.cmd.Ex, { desc = "explore directories", silent = true })
 vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
-vim.keymap.set({ "n", "x" }, "<leader>bn", ":bNext<enter>")
-vim.keymap.set({ "n", "x" }, "<leader>bp", ":bprevious<enter>")
 
 vim.keymap.set("t", "<C-W>", "<C-\\><C-n>")
 
@@ -50,3 +48,15 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true });
 
 vim.keymap.set("n", "<leader>fR", ":Lazy reload telescope.nvim<cr>", { desc = "Sometimes telescope can't init, reload usually does the trick", silent = true});
 vim.keymap.set("n", "<leader>tt", ":set showtabline=1<cr>", { desc = "Sometimes telescope can't init, reload usually does the trick", silent = true});
+
+--:lua local bufs = vim.api.nvim_list_bufs() for _, buf in ipairs(bufs) do if vim.api.nvim_buf_is_loaded(buf) and vim.fn.bufwinnr(buf) == -1 then vim.api.nvim_buf_delete(buf, { force = true }) end end
+
+vim.keymap.set("n", "<leader>bc", function()
+	local bufs = vim.api.nvim_list_bufs()
+
+	for _, buf in ipairs(bufs) do
+		if vim.api.nvim_buf_is_loaded(buf) and vim.fn.bufwinnr(buf) == -1 and not vim.api.nvim_get_option_value('modified', {buf = buf}) then
+			vim.api.nvim_buf_delete(buf, { force = false })
+		end
+	end
+end);

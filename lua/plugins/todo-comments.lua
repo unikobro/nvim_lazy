@@ -6,6 +6,7 @@ return {
 		lazy = false,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
+			signs = false,
 			colors = {
 				error = { "DiagnosticError", "ErrorMsg", "#ea6962" },
 				warning = { "DiagnosticWarn", "WarningMsg", "#d8a657" },

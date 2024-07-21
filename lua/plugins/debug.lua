@@ -14,7 +14,7 @@ local function dap_config()
 		port = "${port}",
 		executable = {
 			-- WARN: CHANGE THIS to your path!
-			command = home_path .. "/.local/share/nvim/codelldb-1.10.0/extension/adapter/codelldb",
+			command = home_path .. "/.local/share/nvim/codelldb/extension/adapter/codelldb",
 			args = { "--port", "${port}" },
 
 			-- FIX: On windows you may have to uncomment this:

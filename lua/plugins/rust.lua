@@ -15,13 +15,21 @@ local function rst_config()
 				only_current_line = true,
 				parameter_hints_prefix = "",
 				other_hints_prefix = " -> ",
-				highlight = "Comment"
+				highlight = "Comment",
 			},
 		},
 		dap = {
 			adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
 		},
 	})
-
 end
-return {{"simrat39/rust-tools.nvim", config = rst_config, ft = {"rust", "rs"}}}
+
+return {
+	-- { "simrat39/rust-tools.nvim", enable = false, config = rst_config, ft = { "rust", "rs" } },
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^4", -- Recommended
+		lazy = false, -- This plugin is already lazy
+		ft = "rust",
+	},
+}

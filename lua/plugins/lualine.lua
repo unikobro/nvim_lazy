@@ -111,7 +111,7 @@ end
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		commit = "ae47d37bac6094439bcf89b5e76a97584b62f0ad",
+		-- commit = "ae47d37bac6094439bcf89b5e76a97584b62f0ad",
 		lazy = false,
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",

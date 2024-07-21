@@ -8,7 +8,7 @@ local function dap_config()
 
 	-- NOTE: from: https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)
 	-- downloaded codelldb vsix from https://github.com/vadimcn/codelldb/releases and extracted in
-	-- .local/share/nvim
+	-- .local/share/nvim last installed on chrysantheme v1.10.0
 	dap.adapters.codelldb = {
 		type = "server",
 		port = "${port}",

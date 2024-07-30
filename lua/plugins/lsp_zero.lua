@@ -1,9 +1,26 @@
+local function cmp_compare_snippets_last(entry1, entry2)
+	print("hey")
+	local kind1 = entry1:get_kind()
+	local kind2 = entry2:get_kind()
+
+	if kind1 ~= kind2 then
+		local kind_orders = {
+			[cmp.lsp.CompletionItemKind.Snippet] = 100,
+		}
+		local kind1_order = kind_orders[kind1] or 1
+		local kind2_order = kind_orders[kind2] or 1
+		return kind1_order < kind2_order
+	end
+end
+
 local function config()
 	local lsp = require("lsp-zero")
 
 	lsp.preset("recommended")
-	lsp.setup_nvim_cmp({
-		preselect = "none",
+	local cmp = require("cmp")
+	print("lsp config")
+	cmp.setup({
+		-- preselect = "none",
 		completion = {
 			completeopt = "menu,menuone,noinsert,noselect",
 		},
@@ -11,6 +28,20 @@ local function config()
 			{ name = "path" },
 			{ name = "nvim_lsp" },
 			{ name = "luasnip", keyword_length = 2 },
+		},
+		sorting = {
+			priority_weight = 2,
+			comparators = {
+				cmp_compare_snippets_last,
+				cmp.config.compare.offset,
+				cmp.config.compare.exact,
+				cmp.config.compare.score,
+				cmp.config.compare.recently_used,
+				cmp.config.compare.locality,
+				cmp.config.compare.sort_text,
+				cmp.config.compare.length,
+				cmp.config.compare.order,
+			},
 		},
 	})
 

@@ -9,3 +9,4 @@ local function debug_action()
 end
 vim.keymap.set("n", "<F4>", code_actions, { silent = true, buffer = bufnr })
 vim.keymap.set("n", "<F5>", debug_action, { silent = true, buffer = bufnr })
+vim.lsp.inlay_hint.enable(true)

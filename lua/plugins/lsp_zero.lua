@@ -32,15 +32,15 @@ local function config()
 		sorting = {
 			priority_weight = 2,
 			comparators = {
-				cmp_compare_snippets_last,
 				cmp.config.compare.offset,
 				cmp.config.compare.exact,
 				cmp.config.compare.score,
 				cmp.config.compare.recently_used,
 				cmp.config.compare.locality,
-				cmp.config.compare.sort_text,
+		--		cmp.config.compare.sort_text,
 				cmp.config.compare.length,
 				cmp.config.compare.order,
+				cmp_compare_snippets_last,
 			},
 		},
 	})

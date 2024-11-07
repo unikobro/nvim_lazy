@@ -36,6 +36,7 @@ local function lualine_config()
 				tabline = 1000,
 				winbar = 1000,
 			},
+			always_show_tabline = false,
 		},
 		sections = {
 			lualine_a = { "mode" },
@@ -96,9 +97,9 @@ local function lualine_config()
 			lualine_a = { {
 				"tabs",
 				mode = 2,
-				cond = function()
-					return vim.fn.tabpagenr('$') > 1
-				end,
+				-- cond = function()
+				-- 	return vim.fn.tabpagenr('$') > 1
+				-- end,
 				draw_empty = false,
 				max_length = function() return vim.go.columns end,
 			} },

@@ -33,7 +33,6 @@ vim.keymap.set("n", "<leader>tc", ":tabnew<cr>", { desc = "tab create", silent =
 vim.keymap.set("n", "<leader>tk", ":tabnext<cr>", { desc = "tab next", silent = true })
 vim.keymap.set("n", "<leader>tk", ":tabprevious<cr>", { desc = "tab previous", silent = true })
 vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "tab close", silent = true })
-vim.keymap.set("n", "<leader>tt", ":set showtabline=1<cr>", { desc = "tab close", silent = true })
 
 vim.keymap.set("n", "<M-right>", ":tabnext<cr>", { desc = "tab next", silent = true })
 vim.keymap.set("n", "<M-left>", ":tabprevious<cr>", { desc = "tab previous", silent = true })
@@ -62,7 +61,7 @@ vim.keymap.set(
 	"n",
 	"<leader>tt",
 	":set showtabline=1<cr>",
-	{ desc = "Sometimes telescope can't init, reload usually does the trick", silent = true }
+	{ desc = "Sometimes tabline goes to always on and I don't want that, this is a workarround.", silent = true }
 )
 
 --:lua local bufs = vim.api.nvim_list_bufs() for _, buf in ipairs(bufs) do if vim.api.nvim_buf_is_loaded(buf) and vim.fn.bufwinnr(buf) == -1 then vim.api.nvim_buf_delete(buf, { force = true }) end end

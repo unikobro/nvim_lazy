@@ -97,6 +97,7 @@ local function lualine_config()
 			lualine_a = { {
 				"tabs",
 				mode = 2,
+				path = 1,
 				-- cond = function()
 				-- 	return vim.fn.tabpagenr('$') > 1
 				-- end,

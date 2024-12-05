@@ -47,6 +47,18 @@ local function config()
 
 	lsp.skip_server_setup({ "rust_analyzer" })
 	lsp.setup()
+	-- HACK: this is a way to ignore errors from rust_analyzer that say the server cancelled the request.
+	-- On nvim updates, try commenting this work arround.
+	-- Source: https://github.com/neovim/neovim/issues/30985#issuecomment-2447329525
+	for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+		local default_diagnostic_handler = vim.lsp.handlers[method]
+		vim.lsp.handlers[method] = function(err, result, context, config_inner)
+			if err ~= nil and err.code == -32802 then
+				return
+			end
+			return default_diagnostic_handler(err, result, context, config_inner)
+		end
+	end
 end
 
 return {

@@ -9,4 +9,3 @@ vim.opt_local.expandtab = true
 vim.opt_local.smarttab = true
 vim.opt_local.cindent = true
 vim.opt_local.cinoptions = "(0"
-print("c/c++ opt loaded")

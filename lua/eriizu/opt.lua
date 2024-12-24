@@ -16,6 +16,7 @@ vim.opt.wildignore:append(
 )
 vim.opt.showmode = false
 vim.g.mapleader = " "
+vim.g.omni_sql_no_default_maps = true
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*" },

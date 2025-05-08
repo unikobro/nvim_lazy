@@ -13,7 +13,7 @@ end
 
 local function lualine_config()
 	-- local theme = require("lualine.themes.sonokai")
-	local theme = require("lualine.themes.gruvbox-material")
+	local theme = require("lualine.themes.catppuccin")
 
 	-- theme.normal.a.bg = "#9fa0e1"
 	theme.normal.a.bg = "#d3869b"

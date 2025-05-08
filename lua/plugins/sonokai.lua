@@ -1,9 +1,21 @@
 return {
 	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "macchiato"
+			})
+			vim.cmd([[colorscheme catppuccin]])
+		end
+	},
+	{
 		"eriizu/gruvbox-material",
 		branch = "custom_v2",
 		lazy = false,
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.g.gruvbox_material_background = "medium"
 			vim.g.gruvbox_material_foreground = "material"

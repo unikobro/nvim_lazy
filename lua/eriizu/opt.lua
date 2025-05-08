@@ -24,15 +24,14 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 vim.opt.colorcolumn = "80"
 
-vim.keymap.set("n", "<leader>fd", vim.cmd.Ex, { desc = "explore directories", silent = true })
 vim.keymap.set({ "n", "x" }, "cp", '"+y')
 vim.keymap.set({ "n", "x" }, "cv", '"+p')
 
 vim.keymap.set("t", "<C-W>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>tc", ":tabnew<cr>", { desc = "tab create", silent = true })
-vim.keymap.set("n", "<leader>tk", ":tabnext<cr>", { desc = "tab next", silent = true })
-vim.keymap.set("n", "<leader>tk", ":tabprevious<cr>", { desc = "tab previous", silent = true })
+vim.keymap.set("n", "<leader>tj", ":tabnext<cr>", { desc = "tab next", silent = true })
+vim.keymap.set("n", "<leader>th", ":tabprevious<cr>", { desc = "tab previous", silent = true })
 vim.keymap.set("n", "<leader>tx", ":tabclose<cr>", { desc = "tab close", silent = true })
 
 vim.keymap.set("n", "<M-right>", ":tabnext<cr>", { desc = "tab next", silent = true })
